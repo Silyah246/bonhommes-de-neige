@@ -1,0 +1,115 @@
+:root {
+  --hauteurEntete: auto;
+  --hauteurPied: 4rem;
+  --hauteurMinPage: calc(100vh - var(--hauteurEntete) - var(--hauteurPied));
+  --blanc-neige: rgb(255, 255, 255);
+  --couleur-grand-titre: rgb(199, 9, 34);
+  --couleur-grand-titre-ombre: rgba(243, 158, 165, 0.897);
+  --vert-sapin: #144223;
+}
+
+body, html {
+  margin: 0;
+  width: 100%;
+	height: 100%;
+}
+
+body {
+  color: rgb(36, 35, 35);
+  font: 700 1.1rem "Mountains of Christmas", serif;
+  letter-spacing: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+header, footer {
+  align-content: center;
+  text-align: center;
+}
+
+header {
+  min-height: var(--hauteurEntete);
+  background-color: var(--vert-sapin);
+
+  h1 {
+    margin: 30px 0 0;
+    color: var(--couleur-grand-titre);
+    text-shadow: 0 0 10px var(--couleur-grand-titre-ombre);
+    -webkit-text-stroke: 5px var(--blanc-neige);
+    paint-order: stroke fill;
+  }
+
+  h2 {
+    margin: 10px 0 30px;
+    color: var(--blanc-neige);
+    text-shadow: 0 0 5px var(--couleur-grand-titre-ombre);
+  }
+
+  nav {
+    background-color: rgb(152, 173, 143);
+  }
+  
+  img {
+    max-height: 4rem;
+    margin: 10px 15px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 100%;
+    transition:0.3s;
+
+    &:hover, &.selectionne {
+      box-shadow: 
+        0 0 20px 5px rgb(242, 255, 242), 
+        0 0 30px rgb(62, 235, 62);
+      filter: none;
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+  }
+}
+
+main {
+  background-image: url("../images/snowflakes-png-41272.png");
+  background-size: 20%;
+  text-align: center;
+  padding: 40px;
+  flex-grow: 1;
+
+  .dessinBonhomme {
+    height: 50vh;
+    margin: auto;
+    background-color: var(--blanc-neige);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: crosshair;
+
+    #curseur {
+      position: absolute;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      display: none;
+      opacity: 0.7;
+      z-index: 100;
+    }
+
+    .etampe {
+      height: 8rem;
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+footer {
+  min-height: var(--hauteurPied);
+  padding: 15px;
+  background-color: var(--vert-sapin);
+  color: var(--blanc-neige);
+  
+  p {
+    margin: 0;
+    text-shadow: 
+      0 0 5px var(--couleur-grand-titre-ombre);
+  }
+}
